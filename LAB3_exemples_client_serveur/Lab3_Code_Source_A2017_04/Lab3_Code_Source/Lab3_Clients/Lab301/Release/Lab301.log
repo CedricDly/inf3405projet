@@ -2,9 +2,9 @@
 Main.cpp(63): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
   C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\um\winsock2.h(1848): note: voir la déclaration de 'inet_ntoa'
   Génération de code en cours
-  1 of 6 functions (16.7%) were compiled, the rest were copied from previous compilation.
+  4 of 6 functions (66.7%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
-  Lab301.vcxproj -> X:\Bureau\Lab3_Code_Source_A2017_04\Lab3_Code_Source\Lab3_Clients\Release\Lab301.exe
-  Lab301.vcxproj -> X:\Bureau\Lab3_Code_Source_A2017_04\Lab3_Code_Source\Lab3_Clients\Release\Lab301.pdb (Full PDB)
+  Lab301.vcxproj -> X:\Documents\PROJET inf3405\LAB3_exemples_client_serveur\Lab3_Code_Source_A2017_04\Lab3_Code_Source\Lab3_Clients\Release\Lab301.exe
+  Lab301.vcxproj -> X:\Documents\PROJET inf3405\LAB3_exemples_client_serveur\Lab3_Code_Source_A2017_04\Lab3_Code_Source\Lab3_Clients\Release\Lab301.pdb (Full PDB)

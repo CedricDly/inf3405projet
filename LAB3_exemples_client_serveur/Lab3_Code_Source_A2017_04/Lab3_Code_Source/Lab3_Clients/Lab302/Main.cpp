@@ -32,12 +32,21 @@ bool testIP(string ipTest) {
 	int octet3 = stoi(ipTest.substr(indicesPts[1] + 1, indicesPts[2] - indicesPts[1] - 1));
 	int octet4 = stoi(ipTest.substr(indicesPts[2] + 1, ipTest.size() - indicesPts[2] - 1));
 
-	if (0 < octet1 && octet1 < 255 && 0 < octet2 && octet2 < 255 && 0 < octet3 && octet3 < 255 && 0 < octet4 && octet4 < 255)
+	if (0 <= octet1 && octet1 <= 255 && 0 <= octet2 && octet2 <= 255 && 0 <= octet3 && octet3 <= 255 && 0 <= octet4 && octet4 <= 255)
 		return true;
 	else
 		return false;
 
 }
+
+//Fonction de test de validite d'un port
+bool testPort(const string& port) {
+	int portBis = stoi(port);
+	if (portBis > 0)
+		return true;
+	else
+		return false;
+	}
 
 int __cdecl main(int argc, char **argv)
 {
@@ -79,24 +88,30 @@ int __cdecl main(int argc, char **argv)
 	//char *host = "L4708-XX.lerb.polymtl.ca";
 	//char *host = "add_IP locale";
 
-	/** A MODIFIER
-	string hosttt;
+	string hostVoulu;
 	cout << "Veuillez entrer l'adresse du serveur que vous voulez joindre: ";
-	cin >> hosttt;
-	string hostBis = hosttt;
-	hostBis.erase(std::remove(hostBis.begin(), hostBis.end(), '.'), hostBis.end());
-	int conv = stoi(hostBis);
+	cin >> hostVoulu;
 
-	while (conv < 13220729101 && conv > 13220729127) {
+	while(testIP(hostVoulu)==false) {
+		cout << "l'adresse entrée en paramètres est incorrecte" << endl;
 		cout << "Veuillez entrer l'adresse du serveur que vous voulez joindre: ";
-		cin >> hosttt;
-		hostBis = hosttt;
-		hostBis.erase(std::remove(hostBis.begin(), hostBis.end(), '.'), hostBis.end());
-		conv = stoi(hostBis);
+		cin >> hostVoulu;
 	}
-	const char *host = hosttt.c_str();
-	char *port = "5030";
-	**/
+
+	const char *host = hostVoulu.c_str();
+
+	string portVoulu;
+	cout << "Veuillez entrer le port du serveur auquel vous voulez vous connecter : ";
+	cin >> portVoulu;
+
+	while (testPort(portVoulu) == false) {
+		cout << "le port entré en paramètres est incorrect" << endl;
+		cout << "Veuillez entrer le port du serveur auquel vous voulez vous connecter : ";
+		cin >> portVoulu;
+	}
+
+	const char *port = portVoulu.c_str();
+	
 	// getaddrinfo obtient l'adresse IP du host donné
     iResult = getaddrinfo(host, port, &hints, &result);
     if ( iResult != 0 ) {
